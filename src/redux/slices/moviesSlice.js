@@ -17,6 +17,7 @@ const getAll = createAsyncThunk(
         try {
             const {data} = await movieService.getAll(page);
             return data
+
         } catch (e) {
             return thunkAPI.rejectWithValue(e.response.data)
         }
@@ -24,7 +25,7 @@ const getAll = createAsyncThunk(
 );
 
 const movieSlice = createSlice({
-    name:'moviesSlice',
+    name:'movies/Slice',
     initialState,
     reducers:{},
     extraReducers: builder => builder.addCase(getAll.fulfilled, (state, action) => {

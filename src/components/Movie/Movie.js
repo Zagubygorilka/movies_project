@@ -2,20 +2,16 @@ import React from 'react';
 
 
 const Movie = ({movie}) => {
-    const {id, brand, price, year} = car;
+    const {backdrop_path, original_title} = movie;
 
-    const dispatch = useDispatch();
 
     return (
         <div>
-            <div>id: {id}</div>
-            <div>brand: {brand}</div>
-            <div>price: {price}</div>
-            <div>year: {year}</div>
-            <button onClick={()=>dispatch(carActions.setCarForUpdate(car))}>update</button>
-            <button onClick={()=>dispatch(carActions.deleteById({id}))}>delete</button>
+            <img src={`https://image.tmdb.org/t/p/w500//${backdrop_path}`} alt={'poster'}/>
+            <div>{original_title}</div>
+
         </div>
     );
 };
 
-export {Car};
+export {Movie};
