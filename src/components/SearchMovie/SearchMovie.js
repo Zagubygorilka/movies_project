@@ -8,8 +8,8 @@ const SearchMovie = () => {
     const {register, reset, handleSubmit} = useForm();
     const dispatch = useDispatch()
 
-    const search = (data) => {
-const query = String(data)
+    const search = (query) => {
+
        dispatch(movieAction.search({query}))
 
         reset()

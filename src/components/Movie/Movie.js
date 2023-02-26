@@ -3,7 +3,7 @@ import StarRatings from "react-star-ratings/build/star-ratings";
 import {Link} from "react-router-dom";
 
 const Movie = ({movie}) => {
-    const {backdrop_path, original_title, vote_average, id} = movie;
+    const {backdrop_path, original_title, vote_average} = movie;
 
 
     return (
@@ -11,7 +11,7 @@ const Movie = ({movie}) => {
             <div>
                 <img src={`https://image.tmdb.org/t/p/w500//${backdrop_path}`} alt={'poster'}/>
 
-                <Link to={'/MovieCard'} movie={movie}><h3>{original_title}</h3></Link>
+                <Link to={'/MovieCard'} state={{...movie}}><h3>{original_title}</h3></Link>
             </div>
             <div>
                 <StarRatings
