@@ -1,9 +1,10 @@
 import React from 'react';
+import {SearchMovie} from "../../components";
 
 const SearchPage = () => {
     return (
         <div>
-            SearchPage
+            <SearchMovie/>
         </div>
     );
 };

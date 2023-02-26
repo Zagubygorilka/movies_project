@@ -16,7 +16,8 @@
     "@reduxjs/toolkit": "^1.9.2",
     "@hookform/resolvers": "^2.9.11",
     "react-router-dom": "^6.8.1",
-    "react-star-ratings": "^2.3.0"
+    "react-star-ratings": "^2.3.0",
+    "joi": "^17.8.3"
 
 
 
