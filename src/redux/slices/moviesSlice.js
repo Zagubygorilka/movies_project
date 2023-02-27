@@ -15,7 +15,7 @@ const getAll = createAsyncThunk(
     'moviesSlice/getAll',
     async ({page}, thunkAPI) => {
         try {
-            console.log(page);
+
             const {data} = await movieService.getAll(page);
 
             return data
@@ -27,11 +27,11 @@ const getAll = createAsyncThunk(
 
 const search = createAsyncThunk(
     'moviesSlice/search',
-    async ({query}, thunkAPI) => {
-        console.log(query);
+    async (query, thunkAPI) => {
+
         try {
 
-            const {data} = await movieService.search({query});
+            const {data} = await movieService.search(query);
             console.log(data);
             return data
         } catch (e) {
@@ -53,6 +53,11 @@ const movieSlice = createSlice({
             state.prev = page -1
             state.next = page+1
 
+        })
+        .addCase(search.fulfilled,(state, action)=>{
+            const {page, results} = action.payload;
+            state.movies = results
+            state.page = page
         })
 
 })
