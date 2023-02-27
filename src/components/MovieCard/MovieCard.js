@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
 import StarRatings from "react-star-ratings/build/star-ratings";
+import css from "./MovieCard.module.css"
 
 const MovieCard = ({state}) => {
     const {backdrop_path,original_title,vote_average,overview} = state
 
     return (
-        <div>
+        <div className={css.MovieCard}>
             <div><img src={`https://image.tmdb.org/t/p/w500//${backdrop_path}`} alt={'poster'}/></div>
             <h3>{original_title}</h3>
             <div><StarRatings

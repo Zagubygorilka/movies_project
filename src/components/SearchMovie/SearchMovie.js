@@ -9,8 +9,8 @@ const SearchMovie = () => {
     const dispatch = useDispatch()
 
     const search = (query) => {
-
-       dispatch(movieAction.search({query}))
+        console.log(query);
+        dispatch(movieAction.search(query))
 
         reset()
     };
