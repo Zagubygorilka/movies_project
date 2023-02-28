@@ -8,7 +8,8 @@ const search = '/search/keyword?query='
 const urls = {
     movies: {
         movies,
-        searchByQuery:(query)=>`${search}${query}`
+        searchByQuery:(query)=>`${search}${query}`,
+        searchById:(id)=>`/find/${id}`
     }
 };
 
