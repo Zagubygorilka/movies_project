@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
-import {movieService} from "../../services/movieService";
+// import {movieService} from "../../services/movieService";
 
 const SearchMovieCard = ({movie}) => {
     const {id, name} = movie;
+    console.log(movie);
 
-    const query = toString(id)
 
-    const {movielist, setMovielist }=useState([])
+    // const {movielist, setMovielist }=useState([])
 
-     const findFilm = movieService.searchById(query)
-        console.log(findFilm);
+     // const findFilm = movieService.searchById(id)
+     //    console.log(findFilm);
 
 
 

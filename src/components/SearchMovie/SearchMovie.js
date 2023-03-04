@@ -10,14 +10,14 @@ const SearchMovie = () => {
     const dispatch = useDispatch()
     const {movies} = useSelector(state => state.movies)
 
-    const search = (data) => {
-        const query = data.search;
-        console.log(query);
-        dispatch(movieAction.search(query))
+    const search =  (data) => {
+
+         dispatch(movieAction.search(data.search))
 
         console.log(movies);
         reset()
     };
+
 
     return (
        <div>
@@ -26,7 +26,7 @@ const SearchMovie = () => {
             <button>SEARCH</button>
         </form>
         <div>
-            {movies.map(movie => <SearchMovieCard key={movie.id} movie={movie}/>)}
+            {dispatch.data ? movies.map(movie => <SearchMovieCard key={movie.id} movie={movie}/>) : []  }
         </div>
 
        </div>
